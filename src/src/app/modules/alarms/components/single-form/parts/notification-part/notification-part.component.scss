@@ -1,0 +1,18 @@
+.notification-button {
+  width: 100%;
+}
+
+.date-input {
+  width: calc(100% - 50px);
+}
+
+.date-button {
+  margin-left: 5px;
+  position: relative;
+  bottom: 5px;
+}
+
+.container {
+  max-height: 410px;
+  overflow-y: auto;
+}

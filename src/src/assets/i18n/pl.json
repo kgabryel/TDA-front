@@ -1,0 +1,292 @@
+{
+  "bookmarks": {
+    "new": "Dodaj nową zakładkę",
+    "addMessage": "Zakładka została dodana.",
+    "deleteMessage": "Zakładka została usunięta.",
+    "updateMessage": "Zakładka została zaktualizowana.",
+    "form": {
+      "titles": {
+        "href": "Adres URL",
+        "title": "Nazwa",
+        "backgroundColor": "Kolor tła",
+        "textColor": "Kolor tekstu"
+      },
+      "headers": {
+        "main": "Podstawowe dane",
+        "details": "Szczegóły"
+      },
+      "errors": {
+        "href": {
+          "required": "Adres jest wymagany",
+          "invalidFormat": "Adres ma zły format."
+        },
+        "title": {
+          "required": "Nazwa jest wymagana.",
+          "maxlength": "Nazwa jest za długa.",
+          "invalidFormat": "Nazwa ma zły format."
+        },
+        "backgroundColor": {
+          "required": "Kolor tła jest wymagany.",
+          "invalidFormat": "Kolor tła ma zły format."
+        },
+        "textColor": {
+          "required": "Kolor tekstu jest wymagany.",
+          "invalidFormat": "Kolor tekstu ma zły format."
+        }
+      },
+      "preview": "Podgląd",
+      "next": "Dalej",
+      "create": "Utwórz",
+      "update": "Aktualizuj"
+    }
+  },
+  "notes": {
+    "new": "Dodaj nową notatkę",
+    "addMessage": "Notatka została dodana.",
+    "deleteMessage": "Notatka została usunięta.",
+    "updateMessage": "Notatka została zaktualizowana.",
+    "form": {
+      "titles": {
+        "assignedToDashboard": "Dołącz do strony głównej",
+        "title": "Nazwa",
+        "backgroundColor": "Kolor tła",
+        "textColor": "Kolor tekstu"
+      },
+      "errors": {
+        "title": {
+          "required": "Nazwa jest wymagana.",
+          "maxlength": "Nazwa jest za długa.",
+          "invalidFormat": "Nazwa ma zły format."
+        },
+        "content": {
+          "required": "Treść jest wymagana.",
+          "invalidFormat": "Treść ma zły format."
+        },
+        "backgroundColor": {
+          "required": "Kolor tła jest wymagany.",
+          "invalidFormat": "Kolor tła ma zły format."
+        },
+        "textColor": {
+          "required": "Kolor tekstu jest wymagany.",
+          "invalidFormat": "Kolor tekstu ma zły format."
+        }
+      },
+      "preview": "Podgląd",
+      "next": "Dalej",
+      "create": "Utwórz",
+      "update": "Aktualizuj"
+    }
+  },
+  "menu": {
+    "dashboard": "Dashboard",
+    "tasks": "Zadania",
+    "addTask": "Dodaj zadanie",
+    "alarms": "Alarmy",
+    "addAlarm": "Dodaj alarm",
+    "notes": "Notatki",
+    "bookmarks": "Zakładki",
+    "images": "Obrazy",
+    "showMore": "Pokaż więcej",
+    "showLess": "Pokaż mniej",
+    "tasksForToday": "Zadania",
+    "undoneTasks": "Nieukończone zadania"
+  },
+  "alarms": {
+    "singleAlarm": "Pojedynczy alarm",
+    "periodicAlarm": "Alarm cykliczny",
+    "notificationDeleteError": "Alarm musi zawierać minimum jedno powiadomienie",
+    "checked": "Aktywne",
+    "unchecked": "Nie aktywne",
+    "task": "Zadanie",
+    "from": "Od: ",
+    "to": "Do: ",
+    "create": "Utwórz",
+    "day": "Dzień",
+    "week": "Tydzień",
+    "month": "Miesiąc",
+    "alarmDisabled": "Alarm został wyłączony.",
+    "alarmActivated": "Alarm został włączony.",
+    "alarmAdded": "Alarm został dodany.",
+    "alarmDeleted": "Alarm został usunięty.",
+    "notificationDisabled": "Powiadomienie zostało wyłączone.",
+    "notificationActivated": "Powiadomienie zostało włączone.",
+    "notificationAdded": "Powiadomienie zostało dodane.",
+    "notificationDeleted": "Powiadomienie zostało usunięte.",
+    "alarmAfterTime": "Alarm nie został włączony (upłynął czas wszystkich powiadomień).",
+    "notificationAfterTime": "Powiadomienie nie zostało włączone (upłynął termin powiadomienia).",
+    "form": {
+      "create": "Utwórz",
+      "addNotification": "Dodaj powiadomienie",
+      "titles": {
+        "title": "Nazwa",
+        "dates": "Zakres dat",
+        "interval": "Odstęp",
+        "intervalType": "Typ",
+        "notificationTypes": "Typy powiadomień",
+        "time": "Godzina",
+        "date": "Data"
+      },
+      "alarmsTypes": {
+        "days": "Dni",
+        "weeks": "Tygodnie",
+        "months": "Miesiące"
+      },
+      "notificationsTypes": {
+        "previousDay": "Poprzedni dzień",
+        "currentDay": "Bieżący dzień",
+        "nextDay": "Następny dzień"
+      },
+      "errors": {
+        "title": {
+          "required": "Nazwa jest wymagana.",
+          "invalidFormat": "Nazwa ma zły format.",
+          "tooLong": "Nazwa jest za długa."
+        },
+        "content": {
+          "invalidFormat": "Treść ma zły format."
+        },
+        "notification": {
+          "required": "Powiadomienie nie zostało ustawione.",
+          "invalidFormat": "Powiadomienie ma zły format."
+        },
+        "startDate": {
+          "required": "Początkowa data nie została ustawiona.",
+          "invalidFormat": "Początkowa data ma zły format."
+        },
+        "endDate": {
+          "invalidFormat": "Końcowa data ma zły format.",
+          "invalidValue": "Końcowa data ma złą wartość."
+        },
+        "interval": {
+          "required": "Odstęp nie został ustawiony.",
+          "invalidFormat": "Odstęp ma zły format.",
+          "invalidValue": "Odstęp ma złą wartość."
+        },
+        "intervalType": {
+          "required": "Typ odstępu nie został ustawiony.",
+          "invalidFormat": "Typ odstępu ma zły format.",
+          "invalidValue": "Typ odstępu ma złą wartość."
+        }
+      },
+      "parts": {
+        "alarm": "Alarm",
+        "notifications": "Powiadomienia",
+        "content": "Treść"
+      }
+    }
+  },
+  "tasks": {
+    "singleTask": "Pojedyncze zadanie",
+    "periodicTask": "Zadanie cykliczne",
+    "alarm": "Alarm",
+    "changeStatusError": "Przed ukończeniem głównego zadania wszystkie zdania podrzędne muszą zostać ukończone.",
+    "taskSwitch": "Zawiera alarm",
+    "from": "Od: ",
+    "to": "Do: ",
+    "taskCreated": "Zadanie zostało dodane.",
+    "taskDeleted": "Zadanie zostgało usunięte.",
+    "statusUpdated": "Zadanie zostało zaktualizowane.",
+    "day": "Dzień",
+    "week": "Tydzień",
+    "month": "Miesiąc",
+    "form": {
+      "create": "Utwórz",
+      "titles": {
+        "title": "Tytuł",
+        "dates": "Zakres dat",
+        "interval": "Odstęp",
+        "intervalType": "Typ",
+        "date": "Data",
+        "mainTask": "Główne zadanie"
+      },
+      "parts": {
+        "task": "Zadanie",
+        "alarm": "Alarm",
+        "notifications": "Powiadomienia"
+      },
+      "errors": {
+        "title": {
+          "required": "Nazwa jest wymagana.",
+          "invalidFormat": "Nazwa ma zły format.",
+          "tooLong": "Nazwa jest za długa."
+        },
+        "content": {
+          "invalidFormat": "Treść ma zły format."
+        },
+        "date": {
+          "invalidFormat": "Data ma zły format."
+        },
+        "mainTask": {
+          "invalidValue": "Wybrano błędne zadanie."
+        },
+        "notification": {
+          "required": "Powiadomienie nie zostało ustawione.",
+          "invalidFormat": "Powiadomienie ma zły format."
+        },
+        "startDate": {
+          "required": "Początkowa data nie została ustawiona.",
+          "invalidFormat": "Początkowa data ma zły format."
+        },
+        "endDate": {
+          "invalidFormat": "Końcowa data ma zły format.",
+          "invalidValue": "Końcowa data ma złą wartość."
+        },
+        "interval": {
+          "required": "Odstęp nie został ustawiony.",
+          "invalidFormat": "Odstęp ma zły format.",
+          "invalidValue": "Odstęp ma złą wartość."
+        },
+        "intervalType": {
+          "required": "Typ odstępu nie został ustawiony.",
+          "invalidFormat": "Typ odstępu ma zły format.",
+          "invalidValue": "Typ odstępu ma złą wartość."
+        }
+      }
+    }
+  },
+  "shared": {
+    "close": "Zamknij",
+    "authError": "Wystąpił błąd autoryzacji.",
+    "serverError": "Wystąpił błąd po stronie serwera.",
+    "invalidDataError": "Przesłano błędne dane."
+  },
+  "dashboard": {
+    "lang": "pl",
+    "tasks": "Zadania",
+    "notes": "Notatki",
+    "bookmarks": "Zakładki"
+  },
+  "header": {
+    "logout": "Wyloguj",
+    "todayAt": "Dzisiaj o:",
+    "tomorrowAt": "Jutro o:"
+  },
+  "auth": {
+    "login": "Zaloguj",
+    "register": "Zarejestruj",
+    "email": "E-mail",
+    "password": "Hasło",
+    "toLogin": "Masz już konto? Zaloguj się",
+    "toRegister": "Nie masz konta? Zarejestruj się",
+    "invalidLoginData": "Błędne dane logowania.",
+    "invalidRegisterData": "Błędne dane.",
+    "serverError": "Wystąpił błąd po stronie serwera.",
+    "form": {
+      "errors": {
+        "email": {
+          "required": "E-mail jest wymagany.",
+          "email": "E-mail ma zły format."
+        },
+        "password": {
+          "required": "Hasło jest wymagane."
+        }
+      }
+    }
+  },
+  "taskStatuses": {
+    "to-do": "Do zrobienia",
+    "in-progress": "W trakcie",
+    "done": "Zrobione",
+    "undone": "Nieukończone"
+  }
+}

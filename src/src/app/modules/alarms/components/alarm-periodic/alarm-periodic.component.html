@@ -1,0 +1,137 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <div class="header">
+        <div>
+          <p class="title">{{alarm.title}}</p>
+          <small>
+            {{'alarms.from' | translate}}{{alarm.start | date: 'y-MM-dd'}}
+            <ng-container *ngIf="alarm.stop !== null"> {{'alarms.to' | translate}}{{alarm.stop | date: 'y-MM-dd'}}</ng-container>
+            ({{alarm.interval}} {{'alarms.'+alarm.intervalType | translate}})
+          </small>
+        </div>
+
+        <div *ngIf="hasAlarm" class="task-button">
+          <button mat-raised-button [style.background-color]="status.color">
+            <mat-icon>{{status.icon}}</mat-icon>
+            <span [ngClass]="{'hidden':small$ | async}">
+              {{'alarms.task' | translate}}
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="navigation">
+        <button mat-icon-button (click)="showActual()" class="section-button" [ngClass]="{'active-section': step===0}">
+          <mat-icon>double_arrow</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="deleteAlarm()">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="changeSection(1)" class="section-button"
+                [ngClass]="{'active-section': step===1}">
+          <mat-icon>double_arrow</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="changeSection(2)" class="section-button"
+                [ngClass]="{'active-section': step===2}">
+          <mat-icon>double_arrow</mat-icon>
+        </button>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="step === 0" hideToggle class="section">
+          <mat-expansion-panel-header class="hidden"></mat-expansion-panel-header>
+
+          <mat-paginator
+            *ngIf="alarm.alarms.length > pageSize"
+            [length]="alarm.alarms.length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            (page)="paginateAlarms($event)"
+          >
+          </mat-paginator>
+
+          <mat-accordion>
+            <mat-expansion-panel hideToggle *ngFor="let subAlarm of selectedAlarms">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <div class="sub-alarm-header">
+                    <p>{{subAlarm.title}}</p>
+                    <p>{{subAlarm.date | date: 'y-MM-dd'}}</p>
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <alarms-alarm-single [alarm]="subAlarm"></alarms-alarm-single>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="step === 1" hideToggle class="section">
+          <mat-expansion-panel-header class="hidden"></mat-expansion-panel-header>
+          <span>
+          <div class="date-manager" [ngClass]="{'without-pagination':alarm.notifications.length<=5}">
+            <mat-form-field class="date-filter">
+              <mat-label>Choose a date</mat-label>
+              <input
+                matInput
+                [matDatepickerFilter]="dateFilter()"
+                [matDatepicker]="picker"
+                (dateChange)="change($event)"
+                [value]="date"
+              />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker disabled="false"></mat-datepicker>
+            </mat-form-field>
+            <mat-paginator
+              *ngIf="alarm.notifications.length > 5"
+              [length]="alarm.notifications.length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="paginateNotifications($event)"
+            >
+            </mat-paginator>
+          </div>
+          <ng-container *ngIf="date !== undefined">
+            <div *ngFor="let notification of selectedNotifications" class="notification">
+              <div class="big-notification">
+                <p>{{date | addSeconds: notification.time | date: 'y-MM-dd HH:mm'}}</p>
+                <div>
+
+                  <mat-chip-list *ngIf="!(smallNotification$ | async)">
+                    <mat-chip *ngFor="let type of notification.types" [style.background-color]="(getNotificationType(type) | async)?.color">
+                      {{(getNotificationType(type) | async)?.name}}
+                    </mat-chip>
+                  </mat-chip-list>
+
+                  <button mat-icon-button>
+                    <mat-icon>delete</mat-icon>
+                  </button>
+
+                </div>
+              </div>
+
+              <div *ngIf="smallNotification$ | async">
+                <mat-chip-list>
+                  <mat-chip *ngFor="let type of notification.types" [style.background-color]="(getNotificationType(type) | async)?.color">
+                    {{(getNotificationType(type) | async)?.name}}
+                  </mat-chip>
+                </mat-chip-list>
+              </div>
+            </div>
+          </ng-container>
+        </span>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="step === 2" hideToggle class="section">
+          <mat-expansion-panel-header class="hidden"></mat-expansion-panel-header>
+          <span [innerHTML]="alarm.content"></span>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card-content>
+
+  </mat-card>
+</div>

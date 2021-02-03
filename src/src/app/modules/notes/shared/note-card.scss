@@ -1,0 +1,21 @@
+.mat-card {
+  margin: 5px;
+  padding: 0;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+}
+
+.mat-card-header {
+  filter: brightness(0.7);
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+
+:host ::ng-deep mat-card .mat-card-header-text {
+  display: none;
+}
+
+.mat-card-header p {
+  margin: 0;
+}

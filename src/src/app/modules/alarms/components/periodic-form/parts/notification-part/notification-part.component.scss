@@ -1,0 +1,13 @@
+.notifications > .interval-input {
+  padding: 5px;
+  width: calc(50% - 30px);
+}
+
+.notification-button {
+  width: 100%;
+}
+
+.container {
+  max-height: 330px;
+  overflow-y: auto;
+}

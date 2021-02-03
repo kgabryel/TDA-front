@@ -1,0 +1,6 @@
+<span *ngFor="let error of errors">
+  <shared-error-message
+    *ngIf="formControl.hasError(error)"
+    [message]="prefix+'.form.errors.'+part+'.'+error"
+  ></shared-error-message>
+</span>

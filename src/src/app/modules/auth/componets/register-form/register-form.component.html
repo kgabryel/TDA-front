@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <div class="language-switch">
+    <shared-lang></shared-lang>
+  </div>
+  <div class="form-container">
+
+    <mat-form-field>
+      <mat-label>{{'auth.email' | translate}}</mat-label>
+      <input matInput type="email" [formControlName]="formNames.email">
+    </mat-form-field>
+
+    <span *ngIf="form.get(formNames.email).invalid && form.get(formNames.email).touched">
+      <shared-errors-container
+        [formControl]="form.get(formNames.email)"
+        prefix="auth"
+        part="email"
+        [errors]="errors.email"
+      >
+      </shared-errors-container>
+    </span>
+
+    <mat-form-field>
+      <mat-label>{{'auth.password' | translate}}</mat-label>
+      <input matInput type="password" [formControlName]="formNames.password">
+    </mat-form-field>
+
+    <span *ngIf="form.get(formNames.password).invalid && form.get(formNames.password).touched">
+      <shared-errors-container
+        [formControl]="form.get(formNames.password)"
+        prefix="auth"
+        part="password"
+        [errors]="errors.password"
+      >
+      </shared-errors-container>
+    </span>
+
+    <shared-error-message *ngIf="errorMessage!==''" [message]="errorMessage"></shared-error-message>
+    <button mat-raised-button color="primary" type="submit">{{'auth.register' | translate}}</button>
+    <button mat-stroked-button color="primary" type="submit" [routerLink]="[loginPath]">
+      {{'auth.toLogin' | translate}}
+    </button>
+
+  </div>
+</form>

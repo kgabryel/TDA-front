@@ -1,0 +1,114 @@
+<mat-vertical-stepper [linear]="true">
+  <mat-step [stepControl]="mainPart" [formGroup]="mainPart">
+    <ng-template matStepLabel>{{'bookmarks.form.headers.main' | translate}}</ng-template>
+    <div class="assign-switch">
+      <mat-slide-toggle color="primary" formControlName="{{formNames.assignedToDashboard}}">
+        {{'notes.form.titles.assignedToDashboard' | translate}}
+      </mat-slide-toggle>
+    </div>
+
+    <mat-form-field class="block-input">
+      <mat-label>{{'bookmarks.form.titles.href' | translate}}</mat-label>
+      <input matInput formControlName="{{formNames.href}}" type="url">
+    </mat-form-field>
+
+    <span *ngIf="mainPart.get(formNames.href).invalid && mainPart.get(formNames.href).touched">
+      <shared-errors-container
+        [formControl]="mainPart.get(formNames.href)"
+        prefix="bookmarks"
+        part="href"
+        [errors]="errors.href"
+      >
+      </shared-errors-container>
+    </span>
+
+    <mat-form-field class="block-input">
+      <mat-label>{{'bookmarks.form.titles.title' | translate}}</mat-label>
+      <input matInput formControlName="{{formNames.title}}" maxlength="50" type="text">
+      <mat-hint align="end">{{titleLength}} / 100</mat-hint>
+    </mat-form-field>
+
+    <span *ngIf="mainPart.get(formNames.title).invalid && mainPart.get(formNames.title).touched">
+      <shared-errors-container
+        [formControl]="mainPart.get(formNames.title)"
+        prefix="bookmarks"
+        part="title"
+        [errors]="errors.title"
+      >
+      </shared-errors-container>
+    </span>
+
+    <div>
+      <button
+        mat-stroked-button
+        matStepperNext
+        color="primary"
+        type="button"
+        class="navigate-button"
+        (click)="markAsTouched()"
+      >
+        {{'bookmarks.form.next' | translate}}
+      </button>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        class="navigate-button"
+        (click)="submit()"
+        [disabled]="form.invalid"
+      >
+        {{'bookmarks.form.' + buttonMessage | translate}}
+      </button>
+    </div>
+  </mat-step>
+
+  <mat-step [stepControl]="detailsPart" [formGroup]="detailsPart">
+    <ng-template matStepLabel>
+      <div class="stepper-header-overlay" (click)="markAsTouched()"></div>
+      {{'bookmarks.form.headers.details' | translate}}
+    </ng-template>
+
+    <mat-form-field class="block-input">
+      <mat-label>{{'bookmarks.form.titles.backgroundColor' | translate}}</mat-label>
+      <input matInput type="color" formControlName="{{formNames.backgroundColor}}">
+    </mat-form-field>
+
+    <span
+      *ngIf="detailsPart.get(formNames.backgroundColor).invalid && detailsPart.get(formNames.backgroundColor).touched"
+    >
+      <shared-errors-container
+        [formControl]="detailsPart.get(formNames.backgroundColor)"
+        prefix="bookmarks"
+        part="backgroundColor"
+        [errors]="errors.title"
+      >
+      </shared-errors-container>
+    </span>
+
+    <mat-form-field class="block-input">
+      <mat-label>{{'bookmarks.form.titles.textColor' | translate}}</mat-label>
+      <input matInput type="color" formControlName="{{formNames.textColor}}">
+    </mat-form-field>
+
+    <span *ngIf="detailsPart.get(formNames.textColor).invalid && detailsPart.get(formNames.textColor).touched">
+      <shared-errors-container
+        [formControl]="detailsPart.get(formNames.textColor)"
+        prefix="bookmarks"
+        part="textColor"
+        [errors]="errors.title"
+      >
+      </shared-errors-container>
+    </span>
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="add-button"
+      (click)="submit()"
+      [disabled]="form.invalid"
+    >
+      {{'bookmarks.form.' + buttonMessage | translate}}
+    </button>
+  </mat-step>
+</mat-vertical-stepper>

@@ -1,0 +1,7 @@
+<mat-slide-toggle (change)="changeStatus($event)"
+                  [color]="'primary'"
+                  [checked]="checked$ |async"
+>
+  {{'tasks.taskSwitch' | translate}}
+</mat-slide-toggle>
+

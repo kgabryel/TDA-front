@@ -1,0 +1,30 @@
+<div [formGroup]="parentForm" class="container">
+  <div formArrayName="notifications" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let e of notifications.controls; let i = index;" cdkDrag>
+
+      <mat-form-field class="date-input">
+        <mat-label>{{'alarms.form.titles.date' | translate}}</mat-label>
+        <input matInput type="datetime-local" [formControlName]="i">
+      </mat-form-field>
+
+      <button mat-mini-fab color="warn" class="date-button" (click)="removeNotification(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+      <span *ngIf="e.invalid && e.touched">
+        <shared-errors-container
+          [formControl]="e"
+          prefix="alarms"
+          part="notification"
+          [errors]="errors.notification"
+        >
+        </shared-errors-container>
+      </span>
+    </div>
+  </div>
+</div>
+
+<button mat-raised-button type="button" class="notification-button" (click)="addNotification()">
+  {{'alarms.form.addNotification' | translate}}
+</button>
+

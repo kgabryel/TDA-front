@@ -1,0 +1,29 @@
+.mat-card-header {
+  padding-right: 5px;
+  justify-content: space-between;
+}
+
+.mat-card-content {
+  max-height: calc(100% - 90px);
+  padding: 16px 16px 0;
+  margin-bottom: 16px;
+  text-overflow: ellipsis;
+  overflow-y: hidden;
+  white-space: pre-wrap;
+}
+
+.mat-card-header > div {
+  width: calc(100% - 130px);
+  padding: 5px;
+}
+
+.mat-card-header p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.mat-icon {
+  padding: 5px;
+  border-radius: 50%;
+}

@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+}
+
+.small {
+  display: block;
+}
+
+.small > div {
+  display: block;
+  width: 100%;
+}
+
+.calendar {
+  width: 67%;
+}
+
+.col {
+  width: 33%;
+}

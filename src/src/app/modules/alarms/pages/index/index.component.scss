@@ -1,0 +1,9 @@
+.container, cdk-virtual-scroll-viewport {
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+.small {
+  height: calc(100vh - 112px);
+  overflow-y: auto;
+}

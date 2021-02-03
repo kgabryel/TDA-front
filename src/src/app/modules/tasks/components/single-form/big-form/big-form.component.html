@@ -1,0 +1,10 @@
+<div class="task-container">
+  <tasks-single-task-part [form]="form.get('task')"></tasks-single-task-part>
+</div>
+<div class="alarm-container" *ngIf="alarmShowed$ | async">
+  <alarms-single-main-part [form]="form.get('alarm')"></alarms-single-main-part>
+</div>
+<div class="notification-container" *ngIf="alarmShowed$ | async">
+  <alarms-form-type-part [formGroup]="form.get(formNames.typesGroup)"></alarms-form-type-part>
+  <alarms-single-notification-part [parentForm]="form"></alarms-single-notification-part>
+</div>

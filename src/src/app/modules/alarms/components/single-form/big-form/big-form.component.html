@@ -1,0 +1,7 @@
+<div>
+  <alarms-single-main-part [form]="form.get(formNames.mainGroup)"></alarms-single-main-part>
+</div>
+<div>
+  <alarms-form-type-part [formGroup]="form.get(formNames.typesGroup)"></alarms-form-type-part>
+  <alarms-single-notification-part [parentForm]="form"></alarms-single-notification-part>
+</div>

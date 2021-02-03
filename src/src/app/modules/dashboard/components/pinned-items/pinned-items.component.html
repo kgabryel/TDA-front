@@ -1,0 +1,37 @@
+<div class="container">
+  <mat-accordion multi="false">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{'dashboard.tasks' | translate}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="panel-content">
+        <ng-container *ngFor="let task of tasks$ | async">
+          <tasks-task-single *ngIf="task.periodic === false" [task]="task"></tasks-task-single>
+          <tasks-task-periodic *ngIf="task.periodic === true" [task]="task"></tasks-task-periodic>
+        </ng-container>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{'dashboard.notes' | translate}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="panel-content">
+        <notes-note *ngFor="let note of notes$|async" [note]="note"></notes-note>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{'dashboard.bookmarks' | translate}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="panel-content">
+        <bookmarks-bookmark *ngFor="let bookmark of bookmarks$|async" [bookmark]="bookmark"></bookmarks-bookmark>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

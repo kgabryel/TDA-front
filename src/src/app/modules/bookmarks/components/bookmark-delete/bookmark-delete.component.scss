@@ -1,0 +1,16 @@
+:host {
+  z-index: 2;
+  display: inline-block;
+  position: relative;
+  top: calc(5px - 100%);
+  left: calc(100% - 85px);
+}
+
+.hidden {
+  display: none;
+}
+
+.mat-icon {
+  padding: 5px;
+  border-radius: 50%;
+}

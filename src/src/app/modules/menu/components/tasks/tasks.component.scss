@@ -1,0 +1,26 @@
+@import "colors";
+
+.tasks-header {
+  text-align: center;
+  color: $color-primary;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.show {
+  margin-top: 10px;
+  display: flex;
+}
+.show > button {
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: .4s all;
+}
+
+.show > .active {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}

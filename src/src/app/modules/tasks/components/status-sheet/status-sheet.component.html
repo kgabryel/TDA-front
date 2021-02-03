@@ -1,0 +1,15 @@
+<mat-nav-list>
+  <ng-container *ngFor="let status of (taskStatuses$ | async)">
+    <a mat-list-item
+       class="status-item"
+       *ngIf="inactive!==status.id"
+       (click)="changeStatus(status.id)"
+       [style.color]="status.color"
+    >
+      <button mat-icon-button class="status-icon">
+        <mat-icon class="to-do">{{status.icon}}</mat-icon>
+      </button>
+      <p class="status-name">{{'taskStatuses.' + status.name | translate}}</p>
+    </a>
+  </ng-container>
+</mat-nav-list>

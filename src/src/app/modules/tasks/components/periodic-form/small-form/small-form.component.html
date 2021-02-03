@@ -1,0 +1,16 @@
+<mat-vertical-stepper [linear]="true">
+  <mat-step>
+    <ng-template matStepLabel>{{'tasks.form.parts.task' | translate}}</ng-template>
+    <tasks-periodic-task-part [form]="form.get('task')"></tasks-periodic-task-part>
+  </mat-step>
+  <mat-step *ngIf="alarmShowed$ | async">
+    <ng-template matStepLabel>{{'tasks.form.parts.alarm' | translate}}</ng-template>
+    <alarms-single-main-part [form]="form.get(formNames.alarmGroup)"></alarms-single-main-part>
+  </mat-step>
+  <mat-step *ngIf="alarmShowed$ | async">
+    <ng-template matStepLabel>{{'tasks.form.parts.notifications' | translate}}</ng-template>
+    <alarms-form-type-part [formGroup]="form.get(formNames.typesGroup)"></alarms-form-type-part>
+    <alarms-periodic-notification-part [parentForm]="form"></alarms-periodic-notification-part>
+  </mat-step>
+</mat-vertical-stepper>
+

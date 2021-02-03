@@ -1,0 +1,77 @@
+<div [formGroup]="form">
+  <mat-form-field class="title">
+    <mat-label>{{'tasks.form.titles.title' | translate}}</mat-label>
+    <input
+      matInput
+      type="text"
+      [formControlName]="formNames.title"
+    />
+    <mat-hint align="end">{{titleLength}} / 100</mat-hint>
+  </mat-form-field>
+
+  <span *ngIf="form.get(formNames.title).invalid && form.get(formNames.title).touched">
+      <shared-errors-container
+        [formControl]="form.get(formNames.title)"
+        prefix="tasks"
+        part="title"
+        [errors]="errors.title"
+      >
+      </shared-errors-container>
+  </span>
+
+  <mat-form-field class="date-input">
+    <mat-label>{{'tasks.form.titles.date' | translate}}</mat-label>
+    <input matInput type="date" [formControlName]="formNames.date">
+  </mat-form-field>
+
+  <span *ngIf="form.get(formNames.date).invalid && form.get(formNames.date).touched">
+    <shared-errors-container
+      [formControl]="form.get(formNames.date)"
+      prefix="tasks"
+      part="date"
+      [errors]="errors.date"
+    >
+    </shared-errors-container>
+  </span>
+
+  <mat-form-field class="main-task-select" [ngClass]="{'hidden': mainTask$ |async}">
+    <mat-label>{{'tasks.form.titles.mainTask' | translate}}</mat-label>
+    <input type="text"
+           matInput
+           [matAutocomplete]="auto"
+           [formControlName]="formNames.search"
+    />
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let task of filteredTasks$ | async" [value]="task">
+        {{task.title}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <span *ngIf="form.get(formNames.search).invalid && form.get(formNames.search).touched">
+    <shared-errors-container
+      [formControl]="form.get(formNames.search)"
+      prefix="tasks"
+      part="mainTask"
+      [errors]="errors.mainTask"
+    >
+    </shared-errors-container>
+  </span>
+
+  <angular-editor
+    [config]="config"
+    class="content"
+    [formControlName]="'content'"
+  >
+  </angular-editor>
+
+  <span *ngIf="form.get(formNames.content).invalid && form.get(formNames.content).touched">
+    <shared-errors-container
+      [formControl]="form.get(formNames.content)"
+      prefix="tasks"
+      part="content"
+      [errors]="errors.content"
+    >
+    </shared-errors-container>
+  </span>
+</div>

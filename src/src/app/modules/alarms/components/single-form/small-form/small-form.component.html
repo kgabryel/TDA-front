@@ -1,0 +1,15 @@
+<mat-vertical-stepper [linear]="true">
+
+  <mat-step>
+    <ng-template matStepLabel>  {{'alarms.form.parts.alarm' | translate}}</ng-template>
+    <alarms-single-main-part [form]="form.get(formNames.mainGroup)"></alarms-single-main-part>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>{{'alarms.form.parts.notifications' | translate}}</ng-template>
+    <alarms-form-type-part [formGroup]="form.get(formNames.typesGroup)"></alarms-form-type-part>
+    <alarms-single-notification-part [parentForm]="form"></alarms-single-notification-part>
+  </mat-step>
+
+</mat-vertical-stepper>
+

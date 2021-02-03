@@ -1,0 +1,11 @@
+:host {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  justify-content: center;
+}
+
+div {
+  flex: 0 0 calc(50% - 10px);
+  padding: 5px;
+}

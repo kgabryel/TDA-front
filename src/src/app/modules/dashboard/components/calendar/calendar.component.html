@@ -1,0 +1,12 @@
+<div>
+  <mwl-calendar-month-view
+    [viewDate]="viewDate"
+    [events]="events | async"
+    [refresh]="refresh"
+    [activeDayIsOpen]="activeDayIsOpen"
+    (dayClicked)="dayClicked($event.day)"
+    [weekStartsOn]="weekStartsOn"
+    [locale]="locale"
+  >
+  </mwl-calendar-month-view>
+</div>

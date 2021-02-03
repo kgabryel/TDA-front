@@ -1,0 +1,59 @@
+@import "colors";
+
+mat-card, mat-expansion-panel, mat-paginator {
+  background-color: $color-basic;
+}
+
+.notification:hover {
+  background-color: #B2B2B2;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 699px) {
+  .date-filter:not(.only) > .mat-form-field {
+    width: 100%;
+  }
+}
+
+.mat-expansion-panel .mat-expansion-panel + .mat-expanded {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+@media only screen and (min-width: 700px) {
+  .date-filter {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.mat-expansion-panel .mat-expanded {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.sub-alarm-header {
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.sub-alarm-header > p {
+  margin-bottom: 0;
+}
+
+.sub-alarm-header > p:first-child {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 1.5em;
+  line-height: 1.5em;
+  width: calc(100% - 80px);
+}
+
+.without-pagination > .mat-form-field {
+  width: 100%;
+}

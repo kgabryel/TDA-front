@@ -1,0 +1,10 @@
+<bookmarks-sidenav>
+  <div>
+    <bookmarks-new-bookmark [style.width]="width" [style.height]="height"></bookmarks-new-bookmark>
+    <bookmarks-bookmark-container
+      *ngFor="let bookmark of (bookmarks$ | async).reverse()" [style.width]="width"
+      [style.height]="height"
+      [bookmark]="bookmark">
+    </bookmarks-bookmark-container>
+  </div>
+</bookmarks-sidenav>

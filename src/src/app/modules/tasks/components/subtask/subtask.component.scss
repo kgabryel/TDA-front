@@ -1,0 +1,25 @@
+.title {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+div:hover {
+  background-color: #B2B2B2;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.date {
+  width: 80px;
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.alarm {
+  background-color: #FCF032;
+}

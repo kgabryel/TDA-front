@@ -1,0 +1,37 @@
+.details {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.details > p {
+  margin-left: 10px;
+}
+
+.details > p:first-child {
+  white-space: nowrap;
+}
+
+.progress:not(.hidden) {
+  width: 100%;
+}
+
+.alarm {
+  margin-left: 5px;
+  background-color: #FCF032;
+}
+
+.disabled {
+  visibility: hidden;
+}
+
+.title {
+  margin-left: 5px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}

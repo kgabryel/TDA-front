@@ -1,0 +1,33 @@
+.container {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  margin-left: 15px;
+}
+
+.icon {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.text > div > .header {
+  font-size: 22px;
+  margin-bottom: 0;
+  display: block;
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.text > div > .date {
+  line-height: 0.9;
+  font-size: 17px;
+  display: block;
+}
+.message{
+  text-align: center;
+}
+.text {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}

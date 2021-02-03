@@ -1,0 +1,21 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="switch-container">
+    <tasks-type-switch></tasks-type-switch>
+    <tasks-alarm-switch></tasks-alarm-switch>
+  </div>
+  <div class="main-container">
+    <tasks-single-small-form
+      *ngIf="smallForm$ | async"
+      [form]="form"
+    >
+    </tasks-single-small-form>
+    <tasks-single-big-form
+      *ngIf="!(smallForm$ |async)"
+      [form]="form"
+    >
+    </tasks-single-big-form>
+  </div>
+  <div class="submit-container">
+    <button mat-raised-button color="primary" class="submit-button" type="submit">Dodaj</button>
+  </div>
+</form>

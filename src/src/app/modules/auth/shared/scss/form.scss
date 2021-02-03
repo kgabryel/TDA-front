@@ -1,0 +1,35 @@
+@import "colors";
+
+form {
+  background-color: white;
+  margin: 5px;
+  padding: 0;
+  border: 3px solid $color-primary;
+  border-radius: 10px;
+}
+
+.language-switch {
+  background-color: $color-primary;
+}
+
+.language-switch {
+  display: flex;
+  padding-right: 10px;
+}
+
+.language-switch > * {
+  margin-left: auto;
+}
+
+.form-container > mat-form-field {
+  display: block;
+}
+
+.form-container > button {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.form-container {
+  margin: 5px 30px 30px 30px;
+}

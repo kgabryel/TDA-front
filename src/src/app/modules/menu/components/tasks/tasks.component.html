@@ -1,0 +1,19 @@
+<div *ngIf="(tasks | async)?.length > 0">
+  <mat-divider class="divider"></mat-divider>
+  <p class="tasks-header">{{'menu.' + headerName | translate}}</p>
+  <div class="tasks-container">
+    <menu-task *ngFor="let task of (tasks | async).slice(0,limit)" [task]="task"></menu-task>
+    <div class="more" [@tasks-slide]='state'>
+      <menu-task *ngFor="let task of (tasks | async).slice(limit)" [task]="task"></menu-task>
+    </div>
+  </div>
+  <div (click)="toggle()" class="show" *ngIf="limit< length">
+    <button mat-icon-button [ngClass]="{'active': expanded}">
+      <mat-icon>double_arrow</mat-icon>
+    </button>
+    <p>
+      <span *ngIf="!expanded">{{'menu.showMore' | translate}}</span>
+      <span *ngIf="expanded">{{'menu.showLess' | translate}}</span>
+    </p>
+  </div>
+</div>

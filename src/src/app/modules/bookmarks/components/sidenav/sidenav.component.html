@@ -1,0 +1,19 @@
+<mat-drawer-container autosize hasBackdrop="true" [ngClass]="{'small': small$ | async}">
+  <mat-drawer mode="over" [opened]="(showed$ | async).open" (closed)="changeStatus($event)" position="end">
+    <bookmarks-create-form
+      *ngIf="(showed$ | async).model === null"
+      (viewAvailable)="viewAvailable($event)"
+      (formSubmitted)="changeStatus(false)"
+    ></bookmarks-create-form>
+    <bookmarks-edit-form
+      *ngIf="(showed$ | async).model !== null"
+      [bookmark]="(showed$ | async).model"
+      (viewAvailable)="viewAvailable($event)"
+      (formSubmitted)="changeStatus(false)"
+    ></bookmarks-edit-form>
+    <button *ngIf="dialogAvailable" mat-stroked-button color="primary" (click)="openDialog()">
+      {{'bookmarks.form.preview' | translate}}
+    </button>
+  </mat-drawer>
+  <ng-content></ng-content>
+</mat-drawer-container>

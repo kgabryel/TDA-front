@@ -1,0 +1,7 @@
+<mat-slide-toggle (change)="changeStatus($event)"
+                  [color]="'primary'"
+                  [checked]="mainTask$ |async"
+>
+  {{'tasks.form.titles.mainTask' | translate}}
+</mat-slide-toggle>
+

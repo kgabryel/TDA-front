@@ -1,0 +1,8 @@
+<div>
+  <button mat-icon-button (click)="openStatusSheet()" onclick="this.blur();"
+          [style.color]="(status$ | async)?.color"
+  >
+    <mat-icon>{{(status$ | async)?.icon}}</mat-icon>
+  </button>
+  <p>{{task.title}}</p>
+</div>

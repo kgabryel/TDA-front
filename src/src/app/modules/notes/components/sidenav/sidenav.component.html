@@ -1,0 +1,21 @@
+<mat-drawer-container autosize hasBackdrop="true" [ngClass]="{'small': small$ | async}">
+  <mat-drawer mode="over" [opened]="(showed$ | async)?.open" (closed)="changeStatus($event)" position="end">
+    <notes-create-form
+      *ngIf="(showed$ | async)?.model === null"
+      (viewAvailable)="viewAvailable($event)"
+      (formSubmitted)="changeStatus(false)"
+    >
+    </notes-create-form>
+    <notes-edit-form
+      *ngIf="(showed$ | async).model !== null"
+      [note]="(showed$ | async)?.model"
+      (viewAvailable)="viewAvailable($event)"
+      (formSubmitted)="changeStatus(false)"
+    >
+    </notes-edit-form>
+    <button mat-stroked-button color="primary" type="button" *ngIf="dialogAvailable" (click)="openDialog()">
+      {{'notes.form.preview' | translate}}
+    </button>
+  </mat-drawer>
+  <ng-content></ng-content>
+</mat-drawer-container>

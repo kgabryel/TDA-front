@@ -1,0 +1,8 @@
+<div [ngClass]="{'small':small$ | async}" class="container">
+  <cdk-virtual-scroll-viewport [itemSize]="20" >
+    <div *cdkVirtualFor="let task of (tasks$ | async).reverse(); templateCacheSize: 0">
+      <tasks-task-single *ngIf="task.periodic === false" [task]="task"></tasks-task-single>
+      <tasks-task-periodic *ngIf="task.periodic === true" [task]="task"></tasks-task-periodic>
+    </div>
+  </cdk-virtual-scroll-viewport>
+</div>

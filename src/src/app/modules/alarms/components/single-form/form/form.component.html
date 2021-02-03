@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div>
+    <alarms-single-small-form
+      *ngIf="smallForm$ | async"
+      [form]="form"
+    >
+    </alarms-single-small-form>
+    <alarms-single-big-form
+      *ngIf="!(smallForm$ |async)"
+      [form]="form"
+    >
+    </alarms-single-big-form>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" type="submit">{{'alarms.form.create' | translate}}</button>
+  </div>
+</form>

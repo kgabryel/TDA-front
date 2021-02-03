@@ -1,0 +1,152 @@
+<div class="container">
+  <mat-card [ngClass]="{'alarm-checked':alarm.checked}">
+    <mat-card-header>
+
+      <div class="header">
+        <ng-container *ngIf="alarm.checked">
+          <button mat-raised-button class="alarm-button alarm-undone" (click)="switchAlarm()">
+            <mat-icon>close</mat-icon>
+            <span [ngClass]="{'hidden':small$ | async}">
+              {{'alarms.unchecked' | translate}}
+            </span>
+          </button>
+        </ng-container>
+
+        <ng-container *ngIf="!alarm.checked">
+          <button mat-raised-button class="alarm-button alarm-done" (click)="switchAlarm()">
+            <mat-icon>done</mat-icon>
+            <span [ngClass]="{'hidden':small$ | async}">
+              {{'alarms.checked' | translate}}
+            </span>
+          </button>
+        </ng-container>
+
+        <p class="title">{{alarm.title}}</p>
+
+        <div *ngIf="hasTask" class="task-button">
+          <button mat-raised-button [style.background-color]="status.color">
+            <mat-icon>{{status.icon}}</mat-icon>
+            <span [ngClass]="{'hidden':small$ | async}">
+              {{'alarms.task' | translate}}
+            </span>
+          </button>
+        </div>
+
+      </div>
+      <div class="navigation">
+
+        <button mat-icon-button (click)="changeSection(0)" class="section-button" [ngClass]="{'active-section': step===0}">
+          <mat-icon>double_arrow</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="deleteAlarm()">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <button
+          mat-icon-button
+          (click)="changeSection(1)"
+          class="section-button"
+          [ngClass]="{'active-section': step===1}"
+          *ngIf="!(alarm.content | emptyString)"
+        >
+          <mat-icon>double_arrow</mat-icon>
+        </button>
+
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-accordion>
+
+        <mat-expansion-panel
+          [expanded]="step === 0"
+          hideToggle
+          class="section"
+          [ngClass]="{'alarm-checked':alarm.checked}"
+        >
+          <mat-expansion-panel-header class="hidden">
+          </mat-expansion-panel-header>
+
+          <mat-paginator
+            *ngIf="alarm.notifications.length > pageSize"
+            [length]="alarm.notifications.length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            (page)="paginate($event)"
+            [ngClass]="{'alarm-checked':alarm.checked}"
+          >
+          </mat-paginator>
+
+          <div *ngFor="let notification of selectedNotifications" class="notification">
+            <div class="big-notification">
+
+              <ng-container *ngIf="notification.checked">
+                <button mat-raised-button class="alarm-undone" (click)="switchNotification(notification)">
+                  <mat-icon>close</mat-icon>
+                  <span [ngClass]="{'hidden':small$ | async}">
+                   {{'alarms.unchecked' | translate}}
+                   </span>
+                </button>
+              </ng-container>
+
+              <ng-container *ngIf="!notification.checked">
+                <button mat-raised-button class="alarm-done" (click)="switchNotification(notification)">
+                  <mat-icon>done</mat-icon>
+                  <span [ngClass]="{'hidden':small$ | async}">
+                   {{'alarms.checked' | translate}}
+                   </span>
+                </button>
+              </ng-container>
+
+              <p>{{notification.time | date: 'y-MM-dd HH:mm'}}</p>
+              <div>
+                <mat-chip-list *ngIf="!(smallNotification$ | async)">
+                  <mat-chip
+                    *ngFor="let type of notification.types"
+                    [style.background-color]="(getNotificationType(type) | async)?.color"
+                  >
+                    {{(getNotificationType(type) | async)?.name}}
+                  </mat-chip>
+                </mat-chip-list>
+                <button mat-icon-button (click)="deleteNotification(notification)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+
+            </div>
+            <div *ngIf="smallNotification$ | async">
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let type of notification.types"
+                  [style.background-color]="(getNotificationType(type) | async)?.color"
+                >
+                  {{(getNotificationType(type) | async)?.name}}
+                </mat-chip>
+              </mat-chip-list>
+            </div>
+          </div>
+          <span>
+    </span>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel
+          [expanded]="step === 1"
+          hideToggle
+          class="section"
+          [ngClass]="{'alarm-checked':alarm.checked}"
+          *ngIf="!(alarm.content | emptyString)"
+        >
+          <mat-expansion-panel-header class="hidden"></mat-expansion-panel-header>
+
+          <span>
+          <span [innerHTML]="alarm.content"></span>
+        </span>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </mat-card-content>
+
+  </mat-card>
+</div>

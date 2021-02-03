@@ -1,0 +1,10 @@
+<div>
+  <alarms-periodic-main-part [form]="form.get(formNames.mainGroup)"></alarms-periodic-main-part>
+</div>
+<div>
+  <alarms-periodic-content-part [form]="form.get(formNames.contentGroup)"></alarms-periodic-content-part>
+</div>
+<div>
+  <alarms-form-type-part [formGroup]="form.get(formNames.typesGroup)"></alarms-form-type-part>
+  <alarms-periodic-notification-part [parentForm]="form"></alarms-periodic-notification-part>
+</div>

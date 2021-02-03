@@ -1,0 +1,13 @@
+.main-container, .submit-container, .switch-container {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button {
+  width: 300px;
+  max-width: 300px;
+}
+
+.switch-container {
+  margin-top: 5px;
+}

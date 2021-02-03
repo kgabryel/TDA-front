@@ -1,0 +1,13 @@
+@import "colors";
+.selected{
+  border-left: 5px solid $color-primary;
+  width: calc(100% - 5px);
+  background-color: #fffef6;
+}
+.selected .name{
+  color: $color-primary;
+}
+hr{
+  margin-left: 30px;
+  margin-right: 30px;
+}

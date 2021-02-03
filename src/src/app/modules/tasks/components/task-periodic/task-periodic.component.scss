@@ -1,0 +1,63 @@
+@import "colors";
+
+mat-card, mat-expansion-panel, mat-paginator {
+  background-color: $color-basic;
+}
+
+.date {
+  margin-bottom: 0;
+  margin-right: 5px;
+}
+
+:host ::ng-deep mat-card-header .mat-card-header-text {
+  display: none;
+}
+
+.mat-expansion-panel .mat-expansion-panel + .mat-expanded {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.mat-expansion-panel .mat-expanded {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+:host ::ng-deep .mat-expansion-panel-body {
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+.sub-div {
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.sub-div > p {
+  margin-bottom: 0;
+}
+
+.sub-div > p:first-child {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 1.5em;
+  line-height: 1.5em;
+  width: calc(100% - 80px);
+}
+
+.alarm {
+  margin-left: auto;
+  background-color: #FCF032;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,16 @@
+<div class="container" *ngIf="notification !== null">
+  <div class="icon">
+    <mat-icon>notifications</mat-icon>
+  </div>
+  <div class="text">
+    <div class="message">
+      <span class="header">{{notification.title}}</span>
+      <span class="date">
+        <ng-container *ngIf="time.prefix !== ''">
+          {{time.prefix | translate}}
+        </ng-container>
+        {{time.time}}
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+.container {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+:host ::ng-deep .mat-expansion-panel-body {
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+mat-card {
+  margin: 5px;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden {
+  display: none;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 1.5em;
+  line-height: 1.5em;
+}
+
+.header p {
+  margin-bottom: 0;
+  display: block;
+}
+
+.active-section {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.mat-card-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.section {
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.section .mat-expansion-panel-header {
+  padding: 0;
+}
+
+.section-button {
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: .5s all;
+}
+
+.active-section {
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}

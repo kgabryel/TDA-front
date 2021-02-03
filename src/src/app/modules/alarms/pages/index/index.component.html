@@ -1,0 +1,8 @@
+<div [ngClass]="{'small' : small$ | async}" class="container">
+  <cdk-virtual-scroll-viewport [itemSize]="20">
+    <div *cdkVirtualFor="let alarm of (alarms$ |async).reverse(); templateCacheSize: 0">
+      <alarms-alarm-single *ngIf="alarm.periodic === false" [alarm]="alarm"></alarms-alarm-single>
+      <alarms-alarm-periodic *ngIf="alarm.periodic === true" [alarm]="alarm"></alarms-alarm-periodic>
+    </div>
+  </cdk-virtual-scroll-viewport>
+</div>

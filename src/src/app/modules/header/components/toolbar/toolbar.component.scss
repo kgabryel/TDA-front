@@ -1,0 +1,41 @@
+mat-toolbar {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container > * {
+  height: 62px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+shared-lang {
+  height: 31px;
+}

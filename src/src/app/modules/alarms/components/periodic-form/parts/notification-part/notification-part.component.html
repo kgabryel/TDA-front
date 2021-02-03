@@ -1,0 +1,33 @@
+<div [formGroup]="parentForm" class="container">
+  <div formArrayName="notifications" cdkDropList (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let e of notifications.controls; let i = index;" cdkDrag class="notifications" [formGroup]="e">
+      <mat-form-field class="interval-input">
+        <mat-label>{{'alarms.form.titles.time' | translate}}</mat-label>
+        <input matInput type="time" formControlName="{{formNames.notificationTime}}" step="60">
+      </mat-form-field>
+      <mat-form-field class="interval-input interval-type-input">
+        <mat-label>{{'alarms.form.titles.notificationTypes' | translate}}</mat-label>
+        <mat-select formControlName="{{formNames.notificationType}}">
+          <mat-option *ngFor="let type of types" [value]="type.value">
+            {{'alarms.form.notificationsTypes.' + type.name | translate}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-mini-fab color="warn" class="date-button" (click)="removeNotification(i)">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <span *ngIf="e.get(formNames.notificationTime).invalid && e.get(formNames.notificationTime).touched">
+        <shared-errors-container
+          [formControl]="e.get(formNames.notificationTime)"
+          prefix="alarms"
+          part="notification"
+          [errors]="errors.notification"
+        >
+        </shared-errors-container>
+      </span>
+    </div>
+  </div>
+</div>
+<button mat-raised-button type="button" class="notification-button" (click)="addNotification()">
+  {{'alarms.form.addNotification' | translate}}
+</button>

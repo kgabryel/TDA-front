@@ -1,0 +1,27 @@
+<mat-form-field [formGroup]="formGroup">
+  <mat-label>{{'alarms.form.titles.notificationTypes' | translate}}</mat-label>
+  <mat-chip-list #chipList class="type-chip-list">
+    <mat-chip
+      class="type-chip"
+      *ngFor="let type of selectedTypes"
+      [style.background-color]="type.color"
+      (removed)="remove(type.id)">
+      {{type.name}}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+    <input
+      #searchInput
+      [formControlName]="formNames.typeSearch"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)"
+      class="ng-invalid"
+    >
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let type of filteredTypes | async" [value]="type.name">
+      {{type.name}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

@@ -1,0 +1,19 @@
+.title {
+  width: 100%;
+}
+
+.date {
+  width: 100%;
+}
+
+.interval {
+  display: flex;
+}
+
+.interval > *:first-child {
+  padding-right: 5px;
+}
+
+.interval-input {
+  width: 100%;
+}

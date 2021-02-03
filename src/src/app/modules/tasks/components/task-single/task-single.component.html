@@ -1,0 +1,80 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+
+      <div class="header">
+
+        <button mat-raised-button (click)="openStatusSheet()" [style.backgroundColor]="(status$| async)?.color">
+          <mat-icon>{{(status$| async)?.icon}}</mat-icon>
+          <span>
+               {{'taskStatuses.' + (status$| async)?.name | translate}}
+            </span>
+        </button>
+
+        <p class="title">{{task.title}}</p>
+        <div class="details">
+          <p>{{task.date | date: 'y-MM-dd'}}</p>
+          <p *ngIf="(subtasks$ | async).length > 0">{{doneTasks$| async}}/{{(subtasks$ | async).length}}</p>
+          <button
+            mat-raised-button
+            class="alarm"
+            *ngIf="task.alarm !==null"
+          >
+            <mat-icon>alarm</mat-icon>
+            <span>
+               {{'tasks.alarm' | translate}}
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="progress" [ngClass]="{'hidden': (subtasks$ | async).length == 0}">
+        <mat-progress-bar mode="determinate" value="{{progress$|async}}"></mat-progress-bar>
+      </div>
+
+      <div class="navigation">
+        <button mat-icon-button (click)="changeSection(0)" class="section-button" [ngClass]="{
+        'active-section': step===0,
+        'disabled':(subtasks$ | async).length == 0
+        }">
+          <mat-icon>double_arrow</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="deleteTask()">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="changeSection(1)" class="section-button"
+                [ngClass]="{'active-section': step===1}">
+          <mat-icon>double_arrow</mat-icon>
+        </button>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="step === 0" hideToggle class="section">
+          <mat-expansion-panel-header class="hidden"></mat-expansion-panel-header>
+
+          <span>
+            <mat-paginator
+              *ngIf="subtasksLength > pageSize"
+              [length]="subtasksLength"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              (page)="paginate($event)"
+            >
+            </mat-paginator>
+            <tasks-subtask *ngFor="let task of selectedSubtasks" [task]="task"></tasks-subtask>
+          </span>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="step === 1" hideToggle class="section">
+          <mat-expansion-panel-header class="hidden"></mat-expansion-panel-header>
+          <span>{{task.content}}</span>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,26 @@
+.alarm-checked {
+  background-color: #B2B2B2;
+}
+
+.notification:hover {
+  background-color: #B2B2B2;
+  border-radius: 4px;
+}
+
+.alarm-checked .notification:hover {
+  background-color: #fffef6;
+  border-radius: 4px;
+}
+
+.alarm-button {
+  margin-right: 5px;
+}
+
+.alarm-done {
+  background-color: #5CB525;
+}
+
+.alarm-undone {
+  background-color: white;
+}
+

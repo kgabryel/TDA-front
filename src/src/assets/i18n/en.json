@@ -1,0 +1,292 @@
+{
+  "bookmarks": {
+    "new": "Add new bookmark",
+    "addMessage": "Bookmark has been added.",
+    "deleteMessage": "Bookmark has been deleted.",
+    "updateMessage": "Bookmark has been updated.",
+    "form": {
+      "titles": {
+        "href": "URL address",
+        "title": "Name",
+        "backgroundColor": "Background color",
+        "textColor": "Text color"
+      },
+      "headers": {
+        "main": "Basic data",
+        "details": "Details"
+      },
+      "errors": {
+        "href": {
+          "required": "URL address is required.",
+          "invalidFormat": "URL address has invalid format."
+        },
+        "title": {
+          "required": "Name is required.",
+          "maxlength": "Name is too long.",
+          "invalidFormat": "Name has invalid format."
+        },
+        "backgroundColor": {
+          "required": "Background color is required.",
+          "invalidFormat": "Background color has invalid format."
+        },
+        "textColor": {
+          "required": "Text color is required.",
+          "invalidFormat": "Text color has invalid format."
+        }
+      },
+      "preview": "Preview",
+      "next": "Next",
+      "create": "Create",
+      "update": "Update"
+    }
+  },
+  "notes": {
+    "new": "Add new note",
+    "addMessage": "Note has been added.",
+    "deleteMessage": "Note has been deleted.",
+    "updateMessage": "Note has been updated",
+    "form": {
+      "titles": {
+        "assignedToDashboard": "Assign to dashboard",
+        "title": "Name",
+        "backgroundColor": "Background color",
+        "textColor": "Text color"
+      },
+      "errors": {
+        "title": {
+          "required": "Name is required.",
+          "maxlength": "Name is too long.",
+          "invalidFormat": "Name has invalid format."
+        },
+        "content": {
+          "required": "Content is required.",
+          "invalidFormat": "Content has invalid format."
+        },
+        "backgroundColor": {
+          "required": "Background color is required.",
+          "invalidFormat": "Background color has invalid format."
+        },
+        "textColor": {
+          "required": "Text color is required.",
+          "invalidFormat": "Text color has invalid format."
+        }
+      },
+      "preview": "Preview",
+      "next": "Next",
+      "create": "Create",
+      "update": "Update"
+    }
+  },
+  "menu": {
+    "dashboard": "Dashboard",
+    "tasks": "Tasks",
+    "addTask": "Add task",
+    "alarms": "Alarms",
+    "addAlarm": "Add alarm",
+    "notes": "Notes",
+    "bookmarks": "Bookmarks",
+    "images": "Images",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "tasksForToday": "Tasks",
+    "undoneTasks": "Undone tasks"
+  },
+  "alarms": {
+    "singleAlarm": "Single alarm",
+    "periodicAlarm": "Periodic alarm",
+    "notificationDeleteError": "Alarm must contain at least one notification",
+    "checked": "Active",
+    "unchecked": "Inactive",
+    "task": "Task",
+    "from": "From: ",
+    "to": "To: ",
+    "create": "Create",
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "alarmDisabled": "Alarm has been disabled.",
+    "alarmActivated": "Alarm has been activated.",
+    "alarmAdded": "Alarm has been added.",
+    "alarmDeleted": "Alarm has been deleted.",
+    "notificationDisabled": "Notification has been disabled.",
+    "notificationActivated": "Notification has been activated.",
+    "notificationAdded": "Notification has been added.",
+    "notificationDeleted": "Notification has been deleted.",
+    "alarmAfterTime": "Alarm has not been activated (all notifications have expired).",
+    "notificationAfterTime": "Notification has not been activated (notification deadline has expired).",
+    "form": {
+      "create": "Create",
+      "addNotification": "Add notification",
+      "titles": {
+        "title": "Name",
+        "dates": "Date range",
+        "interval": "Interval",
+        "intervalType": "Type",
+        "notificationTypes": "Notifications types",
+        "time": "Time",
+        "date": "Date"
+      },
+      "alarmsTypes": {
+        "days": "Days",
+        "weeks": "Weeks",
+        "months": "Months"
+      },
+      "notificationsTypes": {
+        "previousDay": "Previous day",
+        "currentDay": "Current day",
+        "nextDay": "Next day"
+      },
+      "errors": {
+        "title": {
+          "required": "Name is required.",
+          "maxlength": "Name is too long.",
+          "invalidFormat": "Name has invalid format."
+        },
+        "content": {
+          "invalidFormat": "Content has invalid format."
+        },
+        "notification": {
+          "required": "Notification has not been set.",
+          "invalidFormat": "Notification is in the wrong format."
+        },
+        "startDate": {
+          "required": "Start date has not been set.",
+          "invalidFormat": "Start date has invalid format."
+        },
+        "endDate": {
+          "invalidFormat": "End date has invalid format.",
+          "invalidValue": "End date has invalid value."
+        },
+        "interval": {
+          "required": "Interval has not been set.",
+          "invalidFormat": "Interval has invalid format.",
+          "invalidValue": "Interval has invalid value."
+        },
+        "intervalType": {
+          "required": "Interval type has not been set.",
+          "invalidFormat": "Interval type has invalid format.",
+          "invalidValue": "Interval type has invalid value."
+        }
+      },
+      "parts": {
+        "alarm": "Alarm",
+        "notifications": "Notifications",
+        "content": "Content"
+      }
+    }
+  },
+  "tasks": {
+    "singleTask": "Single task",
+    "periodicTask": "Periodic task",
+    "alarm": "Alarm",
+    "taskSwitch": "Includes alarm",
+    "changeStatusError": "Before completing the main task, all sub-sentences must be completed.",
+    "from": "From: ",
+    "to": "To: ",
+    "taskCreated": "Task has been added.",
+    "taskDeleted": "Task has been deleted.",
+    "statusUpdated": "Status has been updated.",
+    "day": "Day",
+    "week": "Week",
+    "month": "Month",
+    "form": {
+      "create": "Create",
+      "titles": {
+        "title": "Title",
+        "dates": "Date range",
+        "interval": "Interval",
+        "intervalType": "Type",
+        "date": "Date",
+        "mainTask": "Main task"
+      },
+      "errors": {
+        "title": {
+          "required": "Name is required.",
+          "maxlength": "Name is too long.",
+          "invalidFormat": "Name has invalid format."
+        },
+        "content": {
+          "invalidFormat": "Content has invalid format."
+        },
+        "date": {
+          "invalidFormat": "Date has invalid format."
+        },
+        "mainTask": {
+          "invalidValue": "Selected invalid task."
+        },
+        "notification": {
+          "required": "Notification has not been set.",
+          "invalidFormat": "Notification is in the wrong format."
+        },
+        "startDate": {
+          "required": "Start date has not been set.",
+          "invalidFormat": "Start date has invalid format."
+        },
+        "endDate": {
+          "invalidFormat": "End date has invalid format.",
+          "invalidValue": "End date has invalid value."
+        },
+        "interval": {
+          "required": "Interval has not been set.",
+          "invalidFormat": "Interval has invalid format.",
+          "invalidValue": "Interval has invalid value."
+        },
+        "intervalType": {
+          "required": "Interval type has not been set.",
+          "invalidFormat": "Interval type has invalid format.",
+          "invalidValue": "Interval type has invalid value."
+        }
+      },
+      "parts": {
+        "task": "Task",
+        "alarm": "Alarm",
+        "notifications": "Notifications"
+      }
+    }
+  },
+  "shared": {
+    "close": "Close",
+    "authError": "Authorization error has occurred.",
+    "serverError": "Server-side error has occurred.",
+    "invalidDataError": "Incorrect data sent."
+  },
+  "dashboard": {
+    "lang": "en",
+    "tasks": "Tasks",
+    "Notes": "Notes",
+    "bookmarks": "Bookmarks"
+  },
+  "header": {
+    "logout": "Logout",
+    "todayAt": "Today at:",
+    "tomorrowAt": "Tomorrow at:"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "E-mail",
+    "password": "Password",
+    "toLogin": "Already have an account? Sign In",
+    "toRegister": "You do not have an account? Register",
+    "invalidLoginData": "Incorrect login data.",
+    "invalidRegisterData": "Incorrect data.",
+    "serverError": "A server-side error has occurred.",
+    "form": {
+      "errors": {
+        "email": {
+          "required": "E-mail jest wymagany.",
+          "email": "E-mail ma zły format."
+        },
+        "password": {
+          "required": "Hasło jest wymagane."
+        }
+      }
+    }
+  },
+  "taskStatuses": {
+    "to-do": "To do",
+    "in-progress": "In progress",
+    "done": "Done",
+    "undone": "Undone"
+  }
+}

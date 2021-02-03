@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="container">
+    <div>
+      <header-menu></header-menu>
+    </div>
+
+    <div class="center" [ngClass]="{'hidden':small$|async}">
+      <header-tasks></header-tasks>
+      <header-notification></header-notification>
+    </div>
+
+    <div class="right">
+      <shared-lang></shared-lang>
+      <header-logout></header-logout>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="container2" [ngClass]="{'hidden':!(small$|async)}">
+    <div class="center">
+      <header-tasks></header-tasks>
+      <header-notification></header-notification>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

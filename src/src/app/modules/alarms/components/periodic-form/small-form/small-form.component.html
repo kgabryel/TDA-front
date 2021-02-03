@@ -1,0 +1,15 @@
+<mat-vertical-stepper [linear]="true">
+  <mat-step>
+    <ng-template matStepLabel>{{'alarms.form.parts.alarm' | translate}}</ng-template>
+    <alarms-periodic-main-part [form]="form.get(formNames.mainGroup)"></alarms-periodic-main-part>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel> {{'alarms.form.parts.content' | translate}}</ng-template>
+    <alarms-periodic-content-part [form]="form.get(formNames.contentGroup)"></alarms-periodic-content-part>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>{{'alarms.form.parts.notifications' | translate}}</ng-template>
+    <alarms-form-type-part [formGroup]="form.get(formNames.typesGroup)"></alarms-form-type-part>
+    <alarms-periodic-notification-part [parentForm]="form"></alarms-periodic-notification-part>
+  </mat-step>
+</mat-vertical-stepper>

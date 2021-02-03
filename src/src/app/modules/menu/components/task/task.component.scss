@@ -1,0 +1,19 @@
+div {
+  display: flex;
+  margin: 5px;
+  border-radius: 5px;
+  align-items: center;
+}
+
+div:hover {
+  background-color: #fffef6;
+  cursor: pointer;
+}
+
+div > p {
+  margin-bottom: 0;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

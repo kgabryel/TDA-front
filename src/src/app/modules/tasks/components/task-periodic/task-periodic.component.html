@@ -1,0 +1,86 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <div class="header">
+        <div>
+          <p class="title">{{task.title}}</p>
+
+          <small>
+            {{'tasks.from' | translate}}{{task.start | date: 'y-MM-dd'}}
+            <ng-container *ngIf="task.stop !== null"> {{'tasks.to' | translate}} {{task.stop | date: 'y-MM-dd'}}</ng-container>
+            ({{task.interval}} {{'tasks.'+task.intervalType | translate}})
+          </small>
+        </div>
+        <button
+          mat-raised-button
+          class="alarm"
+          *ngIf="task.alarm !==null"
+        >
+          <mat-icon>alarm</mat-icon>
+          <span>
+             {{'tasks.alarm' | translate}}
+          </span>
+        </button>
+      </div>
+
+      <div class="navigation">
+        <button
+          mat-icon-button
+          (click)="changeSection(0)"
+          class="section-button"
+          [ngClass]="{'active-section': step===2}"
+        >
+          <mat-icon>double_arrow</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="deleteTask()">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <button
+          mat-icon-button
+          (click)="changeSection(1)"
+          class="section-button"
+          [ngClass]="{'active-section': step===1}"
+        >
+          <mat-icon>double_arrow</mat-icon>
+        </button>
+
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="step === 0" hideToggle class="section">
+          <mat-expansion-panel-header class="hidden"></mat-expansion-panel-header>
+
+          <span>
+             <mat-paginator
+               *ngIf="task.tasks.length > pageSize"
+               [length]="task.tasks.length"
+               [pageSize]="pageSize"
+               [pageSizeOptions]="pageSizeOptions"
+               (page)="paginate($event)"
+             >
+            </mat-paginator>
+
+            <mat-accordion>
+              <mat-expansion-panel hideToggle *ngFor="let subTask of selectedTasks">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <div class="sub-div">
+                      <p>{{subTask.title}}</p>
+                      <p>{{subTask.date | date: 'y-MM-dd'}}</p>
+                    </div>
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+                <tasks-task-single [task]="subTask"></tasks-task-single>
+              </mat-expansion-panel>
+            </mat-accordion>
+
+          </span>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </mat-card-content>
+  </mat-card>
+</div>

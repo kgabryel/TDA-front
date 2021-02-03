@@ -1,0 +1,19 @@
+<div>
+  <button mat-icon-button (click)="openStatusSheet()" onclick="this.blur();">
+    <mat-icon [style.color]="(status$| async)?.color">{{(status$| async).icon}}</mat-icon>
+  </button>
+  <p class="title">{{task.title}}</p>
+  <div class="more">
+    <p class="date" *ngIf="task.date !== null">{{task.date | date: 'y-MM-dd'}}</p>
+    <button mat-raised-button class="alarm">
+      <mat-icon>alarm</mat-icon>
+      <span>{{'tasks.alarm' | translate}}</span>
+    </button>
+    <button mat-icon-button onclick="this.blur();">
+      <mat-icon>visibility</mat-icon>
+    </button>
+    <button mat-icon-button onclick="this.blur();">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>

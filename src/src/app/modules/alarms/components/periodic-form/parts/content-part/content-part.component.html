@@ -1,0 +1,17 @@
+<div [formGroup]="form">
+  <angular-editor
+    [config]="config"
+    [formControlName]="formNames.content"
+  >
+  </angular-editor>
+
+  <span *ngIf="form.get(formNames.content).invalid && form.get(formNames.content).touched">
+      <shared-errors-container
+        [formControl]="form.get(formNames.content)"
+        prefix="alarms"
+        part="content"
+        [errors]="errors.content"
+      >
+      </shared-errors-container>
+  </span>
+</div>

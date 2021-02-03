@@ -1,0 +1,18 @@
+.slider {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+img {
+  height: 20px;
+  width: 32px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.container {
+  overflow: hidden;
+  width: 42px;
+}

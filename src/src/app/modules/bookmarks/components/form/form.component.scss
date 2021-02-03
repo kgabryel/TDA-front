@@ -1,0 +1,43 @@
+@import "colors";
+
+.block-input {
+  display: block;
+}
+
+.navigate-button {
+  width: calc(50% - 20px);
+  margin: 10px;
+}
+
+.add-button {
+  margin: 5px;
+  width: calc(100% - 10px);
+}
+
+.stepper-header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+:host ::ng-deep .mat-vertical-content-container {
+  padding-top: 5px;
+}
+
+:host ::ng-deep .mat-vertical-content:nth-child(1) {
+  padding-bottom: 0;
+}
+
+.assign-switch {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 450px) {
+  .navigate-button {
+    width: 100%;
+    margin: 10px;
+  }
+}

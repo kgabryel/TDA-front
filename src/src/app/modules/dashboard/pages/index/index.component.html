@@ -1,0 +1,8 @@
+<div class="container" [ngClass]="{'small': small$| async}">
+  <div class="calendar">
+    <dashboard-calendar></dashboard-calendar>
+  </div>
+  <div class="col">
+    <dashboard-pinned-items [small$]="small$"></dashboard-pinned-items>
+  </div>
+</div>

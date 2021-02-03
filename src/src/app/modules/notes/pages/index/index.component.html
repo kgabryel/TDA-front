@@ -1,0 +1,12 @@
+<notes-sidenav>
+  <div>
+    <notes-new-note [style.width]="width" [style.height]="height"></notes-new-note>
+    <notes-note
+      *ngFor="let note of (notes$ | async).reverse()"
+      [note]="note"
+      [style.width]="width"
+      [style.height]="height"
+    >
+    </notes-note>
+  </div>
+</notes-sidenav>

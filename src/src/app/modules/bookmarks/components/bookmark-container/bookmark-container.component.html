@@ -1,0 +1,5 @@
+<div (mouseover)="showOptions()" (mouseout)="hideOptions()">
+  <bookmarks-bookmark [bookmark]="bookmark"></bookmarks-bookmark>
+  <bookmarks-bookmark-edit [showed]="active" (click)="edit()"></bookmarks-bookmark-edit>
+  <bookmarks-bookmark-delete [showed]="active" [id]="bookmark.id"></bookmarks-bookmark-delete>
+</div>
